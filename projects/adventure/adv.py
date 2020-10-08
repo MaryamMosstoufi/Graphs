@@ -17,9 +17,9 @@ world = World()
 # shortest is 14
 # map_file = "maps/test_loop.txt"
 # shortest is 14
-# map_file = "maps/test_loop_fork.txt"
+map_file = "maps/test_loop_fork.txt"
 # shortest is 24
-map_file = "maps/main_maze.txt"
+# map_file = "maps/main_maze.txt"
 # shortest is 918
 
 # Loads the map into a dictionary
