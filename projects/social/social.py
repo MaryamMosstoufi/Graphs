@@ -12,6 +12,7 @@ class SocialGraph:
         self.last_id = 0
         self.users = {}
         self.friendships = {}
+        self.counter = 0
 
     def add_friendship(self, user_id, friend_id):
         """
@@ -24,6 +25,7 @@ class SocialGraph:
         else:
             self.friendships[user_id].add(friend_id)
             self.friendships[friend_id].add(user_id)
+            self.counter += 1
 
     def add_user(self, name):
         """
@@ -93,3 +95,4 @@ if __name__ == '__main__':
     print('friendships: ', sg.friendships)
     connections = sg.get_all_social_paths(1)
     print('connections: ', connections)
+    print('counter:', sg.counter)
