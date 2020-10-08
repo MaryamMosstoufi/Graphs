@@ -11,12 +11,12 @@ def earliest_ancestor(ancestors, starting_node):
     else:
         visited = set()
         paths = []
-        q = [[starting_node]]
+        s = [[starting_node]]
 
-        while len(q) > 0:
-            cur_path = q[-1]
+        while len(s) > 0:
+            cur_path = s[-1]
             cur_node = cur_path[-1]
-            q.pop()
+            s.pop()
             if cur_node not in dic:
                 paths.append(cur_path)
             elif cur_node not in visited:
@@ -24,7 +24,7 @@ def earliest_ancestor(ancestors, starting_node):
                 for parent in dic[cur_node]:
                     new_path = list(cur_path)
                     new_path.append(parent)
-                    q.append(new_path)
+                    s.append(new_path)
         longest_path = []
         for path in paths:
             if len(path) > len(longest_path):
